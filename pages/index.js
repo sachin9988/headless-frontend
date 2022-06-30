@@ -4,7 +4,8 @@ import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import React from 'react'
 import { format } from "date-fns";
-//testing
+
+// this project in 2nd branch
 export default function Home({ data, reviewsdata, topstorydata, trendingdata }) {
   const [openTab, setOpenTab] = React.useState(1);
 	return (
