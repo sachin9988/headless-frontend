@@ -5,7 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 import { format } from "date-fns";
 
-// this project in 2nd branch
+// this project in 2nd
 export default function Home({ data, reviewsdata, topstorydata, trendingdata }) {
   const [openTab, setOpenTab] = React.useState(1);
 	return (
