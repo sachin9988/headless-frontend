@@ -521,7 +521,7 @@ const blog = ({ data,reviewsdata,topstorydata }) => {
 //   const data = await res.json(); 
 
 //   const paths = data.map((curElem) => {
-//     console.log(curElem)
+//     // console.log(curElem)
 //     return {
 //       params: {
 //         pageno: curElem.slug.toString(),
@@ -536,7 +536,7 @@ const blog = ({ data,reviewsdata,topstorydata }) => {
 // };
 
 export async function getServerSideProps(context) {
-	const id = context.params.query;
+	const id = context.params.pageno;
   console.log(id)
 	const res = await fetch(`https://cohs.in/headless/wp-json/wp/v2/posts/?_embed&slug=${id}`);
 	const data = await res.json();
