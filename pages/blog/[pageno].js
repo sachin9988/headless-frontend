@@ -516,26 +516,26 @@ const blog = ({ data,reviewsdata,topstorydata }) => {
 	)
 }
 
-  export const getStaticPaths = async () => {
-  const res = await fetch("https://cohs.in/headless/wp-json/wp/v2/posts/");
-  const data = await res.json(); 
+//   export const getStaticPaths = async () => {
+//   const res = await fetch("https://cohs.in/headless/wp-json/wp/v2/posts/");
+//   const data = await res.json(); 
 
-  const paths = data.map((curElem) => {
-    // console.log(curElem)
-    return {
-      params: {
-        pageno: curElem.slug.toString(),
-      },
-    };
-  });
+//   const paths = data.map((curElem) => {
+//     // console.log(curElem)
+//     return {
+//       params: {
+//         pageno: curElem.slug.toString(),
+//       },
+//     };
+//   });
   
-  return {
-    paths,
-    fallback: 'blocking',
-  };
-};
+//   return {
+//     paths,
+//     fallback: 'blocking',
+//   };
+// };
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 	const id = context.params.pageno;
   console.log(id)
 	const res = await fetch(`https://cohs.in/headless/wp-json/wp/v2/posts/?_embed&slug=${id}`);
