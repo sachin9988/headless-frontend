@@ -6,10 +6,11 @@ import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { Fragment } from 'react'
 
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-const Navbar = () => {
+const Navbar = ({logo}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
   const btnDropdownRef = React.createRef();
@@ -49,6 +50,7 @@ const Navbar = () => {
       transform: scaleX(1);
       transform-origin: bottom left;
     }
+  
     
   `}</style>
       <div>
@@ -59,11 +61,12 @@ const Navbar = () => {
                 <div className="flex-shrink-0">
                   <img
                     className="w-[140px] h-[40px]"
-                    src="/white-logo.svg"
+                    src={logo}
                     alt="Workflow"
                     height="40"
                     width="140"
                   />
+                  
 
                 </div>
                 <div className="hidden md:block">
